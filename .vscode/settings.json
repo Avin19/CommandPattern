@@ -51,5 +51,10 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CommandPattern.sln"
+    "dotnet.defaultSolution": "CommandPattern.sln",
+    "csharp2plantuml.inputPath": "Assest\\Scripts",
+    "csharp2plantuml.public": true,
+    "csharp2plantuml.excludePath": "",
+    "csharp2plantuml.allInOne": true,
+    "csharp2plantuml.excludeUmlBeginEndTags": true
 }
