@@ -12,12 +12,12 @@
 ![ScreenShot](Assets/Scripts/Input/include.svg)
 
 ### Main
-![ScreenShot](Assets\Scritps\Main\include.svg)
+![ScreenShot](Assets/Scritps/Main/include.svg)
 
 ### Player
-![ScreenShot](Assets\Scritps\Player\include.png)
+![ScreenShot](Assets/Scritps/Player/include.png)
 ### Sound
-![ScreenShot](Assets\Scritps\Sound\include.png)
+![ScreenShot](Assets/Scritps/Sound/include.png)
 ### UI
 ![ScreenShot](Assests/Scritps/UI/include.png)
 ### FULL
