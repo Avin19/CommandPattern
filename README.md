@@ -19,7 +19,7 @@
 ### Sound
 ![ScreenShot](Assets/Scripts/Sound/include.png)
 ### UI
-![ScreenShot](Assests/Scripts/UI/include.png)
+![ScreenShot](Assets/Scripts/UI/include.png)
 ### FULL
 
 ![ScreenShot](Assets/Scripts/include.svg)
