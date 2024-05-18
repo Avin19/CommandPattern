@@ -16,5 +16,7 @@ namespace Command.Actions
         public bool IsSuccessful();
 
         public Vector3 CalculateMovePosition(UnitController targetUnit);
-    } 
+    }
+    // Enum representing the type of target for a unit action.
+
 }
