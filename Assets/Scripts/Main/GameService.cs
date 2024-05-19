@@ -50,7 +50,7 @@ namespace Command.Main
             PlayerService = new PlayerService();
             uiService.Init(battleScriptableObjects.Count);
         }
-
+        public void ProcessUnitCommand(ICommand commandToProcess) => PlayerService.ProcessUnitCommand(commandToProcess as UnitCommand);
         private void Update() => InputService.UpdateInputService();
     }
 }

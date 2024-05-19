@@ -23,7 +23,7 @@ namespace Command.Player
         {
             units = new List<UnitController>();
 
-            for(int i=0; i<unitScriptableObjects.Count; i++)
+            for (int i = 0; i < unitScriptableObjects.Count; i++)
             {
                 units.Add(new UnitController(this, unitScriptableObjects[i], unitPositions[i]));
             }
@@ -46,13 +46,13 @@ namespace Command.Player
 
         public void OnUnitTurnEnded()
         {
-            if(AllUnitsUsed())
+            if (AllUnitsUsed())
             {
                 // TODO:    Need to check here if any of the players are dead. Not only the active one.
 
                 if (AllUnitsDead())
                     playerService.PlayerDied(this);
-                else 
+                else
                     EndPlayerTurn();
             }
             else
@@ -87,7 +87,25 @@ namespace Command.Player
         {
             units[activeUnitIndex].ResetUnitIndicator();
             activeUnitIndex--;
-            units[activeUnitIndex].StartUnitTurn();
+            while (activeUnitIndex >= 0)
+            {
+                // Check if the unit at the current index is not alive (i.e., it's defeated).
+                if (!units[activeUnitIndex].IsAlive())
+                {
+                    // Move to the previous unit in the list.
+                    activeUnitIndex--;
+                }
+                else
+                {
+                    // Activate the next living unit in the list and start its turn.
+                    units[activeUnitIndex].StartUnitTurn();
+                    break; // Exit the loop once an active unit is found.
+                }
+            }
+        }
+        public void ProcessUnitCommand(UnitCommand commandToProcess)
+        {
+            // GetUnitByID(commandToProcess.commandData.ActorUnitID).ProcessUnitCommand(commandToProcess);
         }
     }
 }
