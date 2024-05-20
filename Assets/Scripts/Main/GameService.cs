@@ -9,6 +9,7 @@ using Command.Events;
 using Command.Battle;
 using Command.Actions;
 using UnityEngine.UI;
+using Replay;
 
 namespace Command.Main
 {
@@ -39,6 +40,7 @@ namespace Command.Main
         // Scene References:
         [SerializeField] private AudioSource sfxSource;
         [SerializeField] private AudioSource bgMusicSource;
+        public ReplayService ReplayService { get; private set; }
 
         private void Start()
         {
@@ -49,6 +51,7 @@ namespace Command.Main
             BattleService = new BattleService(battleScriptableObjects);
             PlayerService = new PlayerService();
             uiService.Init(battleScriptableObjects.Count);
+            ReplayService = new ReplayService();
         }
         public void ProcessUnitCommand(ICommand commandToProcess) => PlayerService.ProcessUnitCommand(commandToProcess as UnitCommand);
         private void Update() => InputService.UpdateInputService();
