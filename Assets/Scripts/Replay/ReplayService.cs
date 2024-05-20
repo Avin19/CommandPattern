@@ -33,6 +33,7 @@ namespace Replay
     public enum ReplayState
     {
         DEACTIVE,
+        ACTIVE,
         NONE
     }
 }

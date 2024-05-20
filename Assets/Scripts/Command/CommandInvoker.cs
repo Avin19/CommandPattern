@@ -1,6 +1,9 @@
 
 
+using System;
 using System.Collections.Generic;
+using Command.Actions;
+using Command.Main;
 
 public class CommandInvoker
 {
@@ -15,6 +18,15 @@ public class CommandInvoker
     {
         ExecuteCommand(commandToProcess);
         RegisterCommand(commandToProcess);
+    }
+    public CommandInvoker() => SubscribeToEvents();
+
+    private void SubscribeToEvents() => GameService.Instance.EventService.OnReplaySelected.AddListener(SetReplayStack);
+
+    private void SetReplayStack(CommandType type)
+    {
+        GameService.Instance.ReplayService.SetCommandStack(commandRegistry);
+        commandRegistry.Clear();
     }
 
     /// <summary>
